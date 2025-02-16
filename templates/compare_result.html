@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Comparison Result</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           text-align: center;
+           margin: 50px;
+           background-color: #f0f8ff;
+       }
+       .result-container {
+           background-color: #ffffff;
+           padding: 20px;
+           border-radius: 10px;
+           display: inline-block;
+           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+       }
+       .weather-info {
+           margin-top: 20px;
+       }
+       .weather-icon {
+           width: 50px;
+           height: 50px;
+       }
+       a {
+           display: block;
+           margin-top: 20px;
+           color: #0288d1;
+           text-decoration: none;
+       }
+       a:hover {
+           text-decoration: underline;
+       }
+   </style>
+</head>
+<body>
+   <h1>Comparison Result</h1>
+   <div class="result-container">
+       {% if best_city %}
+           <h2>Best city based on your preference</h2>
+           <p><strong>City:</strong> {{ best_city['name'] }}</p>
+           <p><strong>Temperature:</strong> {{ best_city['temp'] }}°C</p>
+           <p><strong>Weather:</strong> {{ best_city['weather'] }}</p>
+           <img class="weather-icon" src="https://openweathermap.org/img/wn/{{ best_city['icon'] }}@2x.png" alt="Weather icon">
+           <p>{{ message }}</p>
+       {% else %}
+           <h2>No match found</h2>
+           <p>{{ error }}</p>
+       {% endif %}
+   </div>
+   <br>
+   <a href="/">Back to Home</a>
+   <a href="/compare">Compare Again</a>
+</body>
+</html>

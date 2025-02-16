@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>General Weather</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           text-align: center;
+           margin: 50px;
+           background-color: #e3f2fd;
+       }
+       .form-container {
+           background-color: #ffffff;
+           padding: 20px;
+           border-radius: 10px;
+           display: inline-block;
+           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+       }
+       input, button {
+           margin: 10px;
+           padding: 10px;
+           width: 80%;
+           max-width: 300px;
+       }
+       button {
+           background-color: #0288d1;
+           color: white;
+           border: none;
+           cursor: pointer;
+       }
+       button:hover {
+           background-color: #0277bd;
+       }
+       a {
+           display: block;
+           margin-top: 20px;
+           color: #0288d1;
+           text-decoration: none;
+       }
+       a:hover {
+           text-decoration: underline;
+       }
+   </style>
+</head>
+<body>
+   <h1>Check General Weather</h1>
+   <div class="form-container">
+       <form action="/general" method="post">
+           <label for="city">City:</label>
+           <input type="text" id="city" name="city" placeholder="Enter city name" required>
+           <br><br>
+           <button type="submit">Check Weather</button>
+       </form>
+   </div>
+   <a href="/">Back to Home</a>
+</body>
+</html>

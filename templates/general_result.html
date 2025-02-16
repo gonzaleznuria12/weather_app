@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>General Weather Result</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           text-align: center;
+           margin: 50px;
+           background-color: #f0f8ff;
+       }
+       .result-container {
+           background-color: #ffffff;
+           padding: 20px;
+           border-radius: 10px;
+           display: inline-block;
+           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+       }
+       .weather-info {
+           margin-top: 20px;
+       }
+       .weather-icon {
+           width: 50px;
+           height: 50px;
+       }
+       a {
+           display: block;
+           margin-top: 20px;
+           color: #0288d1;
+           text-decoration: none;
+       }
+       a:hover {
+           text-decoration: underline;
+       }
+   </style>
+</head>
+<body>
+   <h1>Weather in {{ city }}</h1>
+   <div class="result-container">
+       <p><strong>Temperature:</strong> {{ temp }}°C</p>
+       <p><strong>Feels Like:</strong> {{ feels_like }}°C</p>
+       <p><strong>Min Temperature:</strong> {{ temp_min }}°C</p>
+       <p><strong>Max Temperature:</strong> {{ temp_max }}°C</p>
+       <p><strong>Humidity:</strong> {{ humidity }}%</p>
+       <p><strong>Wind Speed:</strong> {{ wind_speed }} m/s</p>
+       <p><strong>Description:</strong> {{ description }}</p>
+       <img class="weather-icon" src="https://openweathermap.org/img/wn/{{ icon }}@2x.png" alt="Weather icon">
+       <p><strong>Message:</strong> {{ message }}</p>
+   </div>
+   <br>
+   <a href="/">Back to Home</a>
+   <a href="/general">Check Another City</a>
+</body>
+</html>
